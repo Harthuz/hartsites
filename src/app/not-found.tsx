@@ -1,9 +1,26 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+
 export default function NotFound() {
+  const router = useRouter();
+  const [start, setStart] = useState(false);
+
+  useEffect(() => {
+    // Aguarda o carregamento da página (hidratação) para iniciar a barra
+    setStart(true);
+
+    // Redireciona para a home em sincronia perfeita com os 3s do CSS
+    const redirectTimer = setTimeout(() => {
+      router.push('/');
+    }, 3000);
+
+    return () => clearTimeout(redirectTimer);
+  }, [router]);
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white px-6">
-      {/* Redirecionamento nativo pelo navegador sem necessidade de JavaScript */}
-      <meta httpEquiv="refresh" content="3;url=/" />
-
       <div className="max-w-md w-full text-center flex flex-col items-center">
         <h1 className="font-serif text-6xl md:text-8xl text-black mb-6">404</h1>
         
@@ -15,9 +32,9 @@ export default function NotFound() {
           Te redirecionando para página principal...
         </p>
         
-        {/* Barra de carregamento com animação CSS pura definida no globals.css */}
+        {/* A barra só recebe a animação após o 'start' ficar true */}
         <div className="w-full max-w-xs h-[2px] bg-gray-100 overflow-hidden relative">
-          <div className="absolute left-0 top-0 h-full bg-black animate-progress-bar" />
+          <div className={`absolute left-0 top-0 h-full bg-black ${start ? 'animate-progress-bar' : 'w-0'}`} />
         </div>
       </div>
     </div>

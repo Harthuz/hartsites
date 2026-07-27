@@ -6,8 +6,24 @@ import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 
 export default function Home() {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "H'ART - Criação de Sites",
+    "description": "Desenvolvimento de sites profissionais, landing pages e soluções web.",
+    "url": process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "BR"
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <Header />
       <main className="flex-1 flex flex-col">
         <Hero />

@@ -3,7 +3,7 @@ import { Monitor, Smartphone, Rocket, TrendingUp, MapPin, Headset } from 'lucide
 const features = [
   {
     icon: Monitor,
-    title: "Design Minimalista",
+    title: "Design",
     description: "Foco total na mensagem da sua marca, materializando a visão do seu negócio em um layout estratégico e direto.",
   },
   {
@@ -43,7 +43,7 @@ export function Features() {
             Entregamos soluções de excelente custo-benefício, combinando design elegante, desempenho e simplicidade.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {features.map((feature, index) => (
             <div key={index} className="flex flex-col items-start bg-white p-10 border border-gray-100 hover:border-black transition-colors duration-300">

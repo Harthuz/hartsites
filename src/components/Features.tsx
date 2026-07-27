@@ -4,7 +4,7 @@ const features = [
   {
     icon: Monitor,
     title: "Design Minimalista",
-    description: "Interfaces limpas, modernas e focadas na experiência do usuário e na conversão.",
+    description: "Foco total na mensagem da sua marca, materializando a visão do seu negócio em um layout estratégico e direto.",
   },
   {
     icon: Smartphone,
@@ -18,7 +18,7 @@ const features = [
   },
   {
     icon: TrendingUp,
-    title: "SEO Básico",
+    title: "SEO",
     description: "Estrutura otimizada para os motores de busca, ajudando você a ser encontrado no Google.",
   },
   {
